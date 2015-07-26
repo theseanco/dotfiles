@@ -1,0 +1,38 @@
+
+FFTPeak		Find peak value in an FFT frame
+
+	# freq, mag = FFTSlope.kr(chain)
+
+Given an FFT chain, this finds the bin with the strongest magnitude. It outputs the frequency of that bin, and its magnitude.  No interpolation is done on the values.
+
+This could be used as a primitive pitch detector, but in practice autocorrelation methods (as used in Pitch and Tartini) give more reliable pitch tracks. This simple approach gives poor resolution and robustness for that purpose. However it can be useful for other things...
+
+
+Example
+
+// Let's see how good it is at tracking the "pitch" of a sinewave!
+s.boot;
+b = Buffer.alloc(s,2048,1);
+(
+x = {
+var in, chain, pitch, freq, mag;
+
+pitch = MouseX.kr(100, 1000, 1);
+
+in = SinOsc.ar(pitch);
+
+chain = FFT(b.bufnum, in);
+
+# freq, mag = FFTPeak.kr(chain);
+
+Out.ar(0, in.dup * 0.1);
+
+pitch.poll(label: "Tru freq");
+freq .poll(label: "Inferred");
+}.play(s);
+)
+
+x.free;
+
+
+

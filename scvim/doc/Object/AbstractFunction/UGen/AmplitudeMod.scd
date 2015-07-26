@@ -1,0 +1,45 @@
+
+
+AmplitudeMod		amplitude follower
+
+AmplitudeMod.kr(input, attackTime, releaseTime, mul, add)
+
+Tracks the peak amplitude of a signal.
+As a opposed to [Amplitude], AmplitudeMod, allows attack and release times to be modulated once the UGen has been instantiated. There is a tiny overhead associated to this.
+
+input - input signal.
+attackTime - 60dB convergence time for following attacks.
+releaseTime - 60dB convergence time for following decays.
+
+(
+// use input amplitude to control Pulse amplitude - use headphones to prevent feedback.
+SynthDef("help-AmplitudeMod",{ arg out=0;
+	Out.ar(out,
+		Pulse.ar(90, 0.3, Amplitude.kr(AudioIn.ar(1)))
+	)
+}).play;
+
+)
+
+
+(
+// use input amplitude to control SinOsc frequency - use headphones to prevent feedback.
+z = SynthDef("help-AmplitudeMod",{ arg out=0, attack=0.01, release=0.01;
+	Out.ar(out,
+		SinOsc.ar(
+			AmplitudeMod.kr(
+						AudioIn.ar(1),
+						attack,
+						release,
+						1200,
+						400)
+			, 0, 0.3)
+	)
+}).play;
+
+)
+z.set(\attack, 0.050)
+z.set(\release, 0.125)
+
+z.free
+

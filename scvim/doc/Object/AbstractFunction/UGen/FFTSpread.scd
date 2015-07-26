@@ -1,0 +1,37 @@
+
+FFTSpread		Spectral spread
+
+	FFTSpread.kr(chain, centroid)
+
+Given an FFT chain, this measures the spectral spread, which is the magnitude-weighted variance. This measure can serve as an (approximate) clue towards the bandwidth of a signal (although the value is not a frequency).
+
+The centroid should be supplied, typically using a SpecCentroid unit - if you don't fill in this argument then a SpecCentroid unit will automatically be added.
+
+
+Example
+
+// Very artificial example - just filtering some noise.
+s.boot;
+b = Buffer.alloc(s,2048,1);
+(
+x = {
+var in, chain, freq, rq, val;
+
+//freq = LFPar.kr(0.3).exprange(100, 1000);
+freq = MouseY.kr(1000, 100, 1);
+rq = MouseX.kr(0.001, 10, 1);
+
+in = BPF.ar(WhiteNoise.ar, freq, rq);
+
+chain = FFT(b.bufnum, in);
+
+val = FFTSpread.kr(chain);
+
+Out.ar(0, in.dup * 0.1);
+(val * 0.000001).poll(10); // Poll but scaled down so more readable!
+}.play(s);
+)
+
+x.free;
+
+

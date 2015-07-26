@@ -1,0 +1,74 @@
+
+
+  JoshUGens
+
+  sc3-plugins:JoshUGens
+
+   by sc3-plugins
+
+ JoshUGens.html
+ help/AtsAmp.html
+ help/AtsFile.html
+ help/AtsFreq.html
+ help/AtsNoiSynth.html
+ help/AtsParInfo.html
+ help/AtsSynth.html
+ help/BFDecode1.html
+ help/BFEncode1.html
+ help/BFEncode2.html
+ help/BFEncodeSter.html
+ help/BFManipulate.html
+ help/BFMixer.html
+ help/Balance.html
+ help/BufGrain.htm
+ help/BufGrainB.htm
+ help/BufGrainI.htm
+ help/DelTapRd.htm
+ help/DelTapWr.htm
+ help/FMGrain.htm
+ help/FMGrainB.htm
+ help/FMGrainI.htm
+ help/FMHDecode1.html
+ help/FMHEncode1.html
+ help/FMHEncode2.html
+ help/LPCFile.html
+ help/LPCSynth.html
+ help/LPCVals.html
+ help/Maxamp.html
+ help/MonoGrain.html
+ help/MonoGrainBF.html
+ help/MoogVCF.html
+ help/OverlapTexture.html
+ help/PVFile.html
+ help/PVInfo.html
+ help/PVSynth.html
+ help/PV_BinBufRd.html
+ help/PV_BinDelay.html
+ help/PV_BinPlayBuf.html
+ help/PV_BufRd.html
+ help/PV_EvenBin.html
+ help/PV_Freeze.html
+ help/PV_FreqBuffer.html
+ help/PV_Invert.html
+ help/PV_MagBuffer.html
+ help/PV_MagMap.html
+ help/PV_MaxMagN.html
+ help/PV_MinMagN.html
+ help/PV_NoiseSynthF.html
+ help/PV_NoiseSynthP.html
+ help/PV_OddBin.html
+ help/PV_PartialSynthF.html
+ help/PV_PartialSynthP.html
+ help/PV_PlayBuf.html
+ help/PV_RecordBuf.html
+ help/Player.html
+ help/ProcEvents.html
+ help/ProcMod.html
+ help/SinGrain.htm
+ help/SinGrainB.htm
+ help/SinGrainBBF.htm
+ help/SinGrainBF.htm
+ help/SinGrainI.htm
+ help/SinGrainIBF.htm
+ help/Tendency.html
+ help/WarpOverlap.html

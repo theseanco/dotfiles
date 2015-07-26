@@ -1,0 +1,18 @@
+
+Perlin3		3D Perlin Noise
+
+Perlin3.ar(x, y, z)
+Perlin3.kr(x, y, z)
+
+Perlin noise is a type of gradient noise devised by Ken Perlin, and commonly used to add texture to objects rendered in computer graphics. It is deterministic: for a given input co-ordinate it always returns the same output value. To make audible noise you will typically need to define some trajectory through the co-ordinate space.
+
+Examples
+
+s.boot
+
+{Perlin3.ar(Integrator.ar(K2A.ar(MouseX.kr(0, 0.1))),
+		Integrator.ar(K2A.ar(MouseY.kr(0, 0.1))))}.play(s)
+
+{Perlin3.ar(*{Line.ar(0, 1000, 30)}.dup(3))}.plot(1)
+
+
