@@ -65,3 +65,4 @@ nnoremap <C-n> :bnext<CR>
 map <C-i> <Plug>(easymotion-b)
 map <C-o> <Plug>(easymotion-w)
 "changing default easymotion mappings
+hi Normal ctermbg=none
