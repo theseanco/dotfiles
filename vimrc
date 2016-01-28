@@ -18,15 +18,14 @@ Plugin 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'garbas/vim-snipmate' "Depreciated
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'honza/vim-snippets'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sbl/scvim'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 Plugin 'klen/python-mode'
 Plugin 'myusuf3/numbers.vim' "plugin to handle relative numbering
 Plugin 'scrooloose/syntastic'
@@ -66,3 +65,20 @@ map <C-i> <Plug>(easymotion-b)
 map <C-o> <Plug>(easymotion-w)
 "changing default easymotion mappings
 hi Normal ctermbg=none
+"transparent terminal
+set laststatus=2
+"statusline always on
+let g:pymode_rope_lookup_project = 0
+let g:pymode_doc = 0
+let g:pymode_rope = 0
+"a bunch of things to do word wrapping
+:set wrap
+:set linebreak
+:set nolist  " list disables linebreak
+"ultisnips things
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir = "~/.vim/bundle/vim-snippets/UltiSnips"
+let g:UltiSnipsEnableSnipMate=1
