@@ -4,4 +4,4 @@ All steps graciously lifted from http://blog.smalleycreative.com/tutorials/using
 
 Gets dotfiles in order between machines
 
-
+Some dotfiles contain directories that are dependent on my co34pt_LiveCode repo. Particularly .emacs and it's reference to tidal.el
