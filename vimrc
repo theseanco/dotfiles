@@ -21,7 +21,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'honza/vim-snippets'
+" added my own fork of vim-snippets
+Plugin 'theseanco/vim-snippets'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sbl/scvim'
@@ -32,6 +33,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion' "the mad motion plugin
 Plugin 'bling/vim-airline' "airline for multibuffer setup/sound/visuals
 Plugin 'joeytwiddle/sexy_scroller.vim'
+"Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -76,9 +78,13 @@ let g:pymode_rope = 0
 :set linebreak
 :set nolist  " list disables linebreak
 "ultisnips things
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"let g:UltiSnipsExpandTrigger="<C-s>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir = "~/.vim/bundle/vim-snippets/UltiSnips"
 let g:UltiSnipsEnableSnipMate=1
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
