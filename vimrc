@@ -21,19 +21,22 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-" added my own fork of vim-snippets
-Plugin 'theseanco/vim-snippets'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'sbl/scvim'
-" Plugin 'ervandew/supertab'
 Plugin 'klen/python-mode'
 Plugin 'myusuf3/numbers.vim' "plugin to handle relative numbering
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion' "the mad motion plugin
-Plugin 'bling/vim-airline' "airline for multibuffer setup/sound/visuals
 Plugin 'joeytwiddle/sexy_scroller.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" New markdown things
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+" vim saving
+Plugin 'tpope/vim-obsession'
+" supercollider(!!)
+Plugin 'supercollider/scvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,9 +52,9 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-so ~/.scvimrc  "adds supercollider vimfile, on the guidance of Cole Ingraham
-colorscheme molokai
+" so ~/.scvimrc  "adds supercollider vimfile, on the guidance of Cole Ingraham
 let &t_Co=256
+colorscheme Tomorrow-Night
 
 "SYNTASTIC OPTIONS
 let g:syntastic_always_populate_loc_list = 1
@@ -88,3 +91,5 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+let g:airline_theme='base16_tomorrow'
+let g:vim_markdown_folding_disabled = 1
