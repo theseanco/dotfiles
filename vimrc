@@ -37,6 +37,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-obsession'
 " supercollider(!!)
 Plugin 'supercollider/scvim'
+" javascript for p5.js
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -93,3 +95,12 @@ let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:airline_theme='base16_tomorrow'
 let g:vim_markdown_folding_disabled = 1
+
+" have tabs be 4 spaces not 8
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" spell checking from https://robots.thoughtbot.com/vim-spell-checking
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_gb
