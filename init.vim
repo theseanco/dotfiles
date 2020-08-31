@@ -4,6 +4,7 @@
 " - Look at old vim config and bring across relevant settings
 " - Ignore node modules
 " - Clipboard copy and paste
+" - Colorschemes
 
 call plug#begin("~/.vim/plugged")
 " File tree and icons
