@@ -1,3 +1,10 @@
+" TODO:
+" - Tabs & Spaces, rework
+" - JSX syntax highlighting
+" - Look at old vim config and bring across relevant settings
+" - Ignore node modules
+" - Clipboard copy and paste
+
 call plug#begin("~/.vim/plugged")
 " File tree and icons
 Plug 'scrooloose/nerdtree'
