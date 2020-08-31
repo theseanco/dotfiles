@@ -23,6 +23,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Fugitive, git integration
 Plug 'tpope/vim-fugitive'
+" Gitgutter, for seeing info about github changes
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "Config Section
@@ -94,15 +96,17 @@ let g:fzf_action = {
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " Relative Line numbering
-:set number relativenumber
+set number relativenumber
 
 " Tabs as two spaces
-:set expandtab
-:set tabstop=2
+set expandtab
+set tabstop=2
 
 " Enable mac clipboard
 set clipboard=unnamed
 
+" Updatetime enables gitgutter diffs to come up faster
+set updatetime=100
 
 
 " What can I do?
