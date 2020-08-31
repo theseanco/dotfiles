@@ -1,10 +1,10 @@
 " TODO:
-" - Tabs & Spaces, rework
 " - JSX syntax highlighting
 " - Look at old vim config and bring across relevant settings
-" - Ignore node modules
-" - Clipboard copy and paste
+" - Ignore node modules on fzf
 " - Colorschemes
+" - Customise Powerline
+" - Git integration
 
 call plug#begin("~/.vim/plugged")
 " File tree and icons
@@ -18,6 +18,11 @@ Plug 'junegunn/fzf.vim'
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint']
+" airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Fugitive, git integration
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "Config Section
@@ -29,7 +34,9 @@ endif
 syntax enable
 colorscheme dracula
 
-" Control
+" Control NERDTree
+" Following is useful for working with nerdtree
+" https://cheatography.com/stepk/cheat-sheets/vim-nerdtree/
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
@@ -86,6 +93,16 @@ let g:fzf_action = {
 " Not entirely sure this works
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
+" Relative Line numbering
+:set number relativenumber
+
+" Tabs as two spaces
+:set expandtab
+:set tabstop=2
+
+" Enable mac clipboard
+set clipboard=unnamed
+
 
 
 " What can I do?
@@ -101,4 +118,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 "   	- CTRL+S for open below split
 "   	- CTRL+V for open side split
 "   	- ENTER for open in current tab
-"  - Node modules is ignored using the silver searcher
+"  - Node modules is ignored using the silver searchee
+" - Tabs are two spaces
+" - Relative numbering
+" - Uses osx clipboard
