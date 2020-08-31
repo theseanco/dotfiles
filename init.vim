@@ -108,6 +108,10 @@ set clipboard=unnamed
 " Updatetime enables gitgutter diffs to come up faster
 set updatetime=100
 
+" Experimental prettier config
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+
 
 " What can I do?
 " - Ctrl+a to toggle file explorer
@@ -126,3 +130,4 @@ set updatetime=100
 " - Tabs are two spaces
 " - Relative numbering
 " - Uses osx clipboard
+" - COC prettier has been installed, there is some autocomplete stuff in there

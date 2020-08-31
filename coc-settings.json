@@ -1,5 +1,10 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "json", "javascriptreact"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "json",
+    "javascriptreact"
+  ],
+  "prettier.eslintIntegration": true,
   "eslint.filetypes": ["javascript", "javascriptreact"],
   "coc.preferences.diagnostic.virtualText": true
 }
