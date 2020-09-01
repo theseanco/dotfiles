@@ -28,8 +28,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Auto bracket completion
 Plug 'jiangmiao/auto-pairs'
-" Better JSX?
+" Better JSX
 Plug 'MaxMEllon/vim-jsx-pretty'
+" Gruvbox - full-featured color scheme
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 "Config Section
@@ -39,7 +41,8 @@ if (has("termguicolors"))
  set termguicolors
 endif
 syntax enable
-colorscheme dracula
+let g:gruvbox_italic=1
+colorscheme gruvbox
 
 " Control NERDTree
 " Following is useful for working with nerdtree
@@ -130,8 +133,6 @@ let s:tabwidth=2
 exec 'set tabstop='    .s:tabwidth
 exec 'set shiftwidth=' .s:tabwidth
 exec 'set softtabstop='.s:tabwidth
-
-
 
 " What can I do?
 " - Ctrl+a to toggle file explorer
