@@ -29,7 +29,7 @@ Plug 'airblade/vim-gitgutter'
 " Auto bracket completion
 Plug 'jiangmiao/auto-pairs'
 " Better JSX?
-Plug 'MaxMEllon/vim-jsx-pretty
+Plug 'MaxMEllon/vim-jsx-pretty'
 call plug#end()
 
 "Config Section
