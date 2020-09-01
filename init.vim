@@ -111,6 +111,9 @@ set updatetime=100
 " Experimental prettier config
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
+" airline fonts
+let g:airline_powerline_fonts = 1
+
 
 
 " What can I do?
@@ -126,8 +129,12 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "   	- CTRL+S for open below split
 "   	- CTRL+V for open side split
 "   	- ENTER for open in current tab
-"  - Node modules is ignored using the silver searchee
+" - Node modules is ignored using the silver searcher
 " - Tabs are two spaces
 " - Relative numbering
 " - Uses osx clipboard
 " - COC prettier has been installed, there is some autocomplete stuff in there
+
+
+" things to remember
+" g t / g T switches tabs
