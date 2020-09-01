@@ -1,7 +1,5 @@
 " TODO:
 " - JSX syntax highlighting
-" - Look at old vim config and bring across relevant settings
-" - Ignore node modules on fzf
 " - Colorschemes
 " - Customise Powerline
 " - Git integration
@@ -10,8 +8,11 @@ call plug#begin("~/.vim/plugged")
 " File tree and icons
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+" NERDTree github integration
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " color scheme install
 Plug 'dracula/vim'
+Plug 'gryf/wombat256grf'
 " fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -25,6 +26,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 " Gitgutter, for seeing info about github changes
 Plug 'airblade/vim-gitgutter'
+" Auto bracket completion
+Plug 'jiangmiao/auto-pairs'
+" Better JSX?
+Plug 'MaxMEllon/vim-jsx-pretty
 call plug#end()
 
 "Config Section
