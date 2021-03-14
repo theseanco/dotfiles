@@ -32,6 +32,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'MaxMEllon/vim-jsx-pretty'
 " Gruvbox - full-featured color scheme
 Plug 'morhetz/gruvbox'
+" Ack - for searching
+Plug 'mileszs/ack.vim'
+Plug 'APZelos/blamer.nvim'
 call plug#end()
 
 "Config Section
@@ -133,6 +136,9 @@ let s:tabwidth=2
 exec 'set tabstop='    .s:tabwidth
 exec 'set shiftwidth=' .s:tabwidth
 exec 'set softtabstop='.s:tabwidth
+
+" add gitlens by default
+let g:blamer_enabled = 1
 
 " What can I do?
 " - Ctrl+a to toggle file explorer
