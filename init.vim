@@ -35,6 +35,12 @@ Plug 'morhetz/gruvbox'
 " Ack - for searching
 Plug 'mileszs/ack.vim'
 Plug 'APZelos/blamer.nvim'
+" Nice colour schemes
+Plug 'chriskempson/base16-vim'
+" Typescript support
+Plug 'leafgarland/typescript-vim'
+" Tab renamer with TabooRename
+Plug 'gcmt/taboo.vim'
 call plug#end()
 
 "Config Section
@@ -45,7 +51,10 @@ if (has("termguicolors"))
 endif
 syntax enable
 let g:gruvbox_italic=1
+" Dark theme
 colorscheme gruvbox
+" Light theme
+"colorscheme zellner
 
 " Control NERDTree
 " Following is useful for working with nerdtree
@@ -84,6 +93,10 @@ nnoremap ∆ <C-w>j
 nnoremap ˚ <C-w>k
 nnoremap ¬ <C-w>l
 
+"option plus f to open Rg, for fuzzy file searching
+nnoremap ƒ :Rg<CR>
+
+
 " Reloads vimrc after saving but keep cursor position
 if !exists('*ReloadVimrc')
    fun! ReloadVimrc()
@@ -104,7 +117,7 @@ let g:fzf_action = {
 
 " Use silver searcher to ignore node files
 " Not entirely sure this works
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+" let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " Relative Line numbering
 set number relativenumber
@@ -139,6 +152,9 @@ exec 'set softtabstop='.s:tabwidth
 
 " add gitlens by default
 let g:blamer_enabled = 1
+
+" show max line length for inflowmatix react code
+set colorcolumn=80
 
 " What can I do?
 " - Ctrl+a to toggle file explorer
