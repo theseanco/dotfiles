@@ -41,6 +41,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'leafgarland/typescript-vim'
 " Tab renamer with TabooRename
 Plug 'gcmt/taboo.vim'
+" vim javascript stuff
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 "Config Section
@@ -155,6 +157,17 @@ let g:blamer_enabled = 1
 
 " show max line length for inflowmatix react code
 set colorcolumn=80
+
+" Mappings to go to type definitions/implementation/references, taken from https://pragmaticpineapple.com/ultimate-vim-typescript-setup/
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " What can I do?
 " - Ctrl+a to toggle file explorer
