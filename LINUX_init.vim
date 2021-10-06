@@ -35,8 +35,12 @@ Plug 'morhetz/gruvbox'
 " Ack - for searching
 Plug 'mileszs/ack.vim'
 Plug 'APZelos/blamer.nvim'
+" Nice colour schemes
+Plug 'chriskempson/base16-vim'
 " TypeScript support
 Plug 'leafgarland/typescript-vim'
+" vim javascript stuff
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 "Config Section
@@ -85,6 +89,9 @@ nnoremap ˙ <C-w>h
 nnoremap ∆ <C-w>j
 nnoremap ˚ <C-w>k
 nnoremap ¬ <C-w>l
+
+"option plus f to open Rg, for fuzzy file searching
+nnoremap ƒ :Rg<CR>
 
 " Reloads vimrc after saving but keep cursor position
 if !exists('*ReloadVimrc')
@@ -141,6 +148,19 @@ exec 'set softtabstop='.s:tabwidth
 
 " add gitlens by default
 let g:blamer_enabled = 1
+
+" Mappings to go to type definitions/implementation/references, taken from https://pragmaticpineapple.com/ultimate-vim-typescript-setup/
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+
 
 " What can I do?
 " - Ctrl+a to toggle file explorer
