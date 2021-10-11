@@ -81,17 +81,17 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 
 " use alt+hjkl to move between split/vsplit panels
 " Mapped to relevant alt mac keystrokes
-tnoremap ˙ <C-\><C-n><C-w>h
-tnoremap ∆ <C-\><C-n><C-w>j
-tnoremap ˚ <C-\><C-n><C-w>k
-tnoremap ¬ <C-\><C-n><C-w>l
-nnoremap ˙ <C-w>h
-nnoremap ∆ <C-w>j
-nnoremap ˚ <C-w>k
-nnoremap ¬ <C-w>l
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 
 "option plus f to open Rg, for fuzzy file searching
-nnoremap ƒ :Rg<CR>
+nnoremap <A-f> :Rg<CR>
 
 " Reloads vimrc after saving but keep cursor position
 if !exists('*ReloadVimrc')
@@ -151,7 +151,7 @@ let g:blamer_enabled = 1
 
 " Mappings to go to type definitions/implementation/references, taken from https://pragmaticpineapple.com/ultimate-vim-typescript-setup/
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gd <Plug>(coc-definition) 
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -160,8 +160,8 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-
-
+" open fzf in split
+let g:fzf_layout = { 'down': '~30%' }
 " What can I do?
 " - Ctrl+a to toggle file explorer
 " - vimrc autoreloads when edited
