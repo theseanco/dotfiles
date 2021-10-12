@@ -43,6 +43,10 @@ Plug 'leafgarland/typescript-vim'
 Plug 'gcmt/taboo.vim'
 " vim javascript stuff
 Plug 'pangloss/vim-javascript'
+" Prettier plugin for vim
+Plug 'sbdchd/neoformat'
+" Plugin for styled JSX
+Plug 'alampros/vim-styled-jsx'
 call plug#end()
 
 "Config Section
@@ -168,6 +172,13 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Prettier format on save
+autocmd BufWritePre *.ts Neoformat
+autocmd BufWritePre *.tsx Neoformat
+
+" Open fzf in split
+let g:fzf_layout = { 'down': '~35%' }
 
 " What can I do?
 " - Ctrl+a to toggle file explorer
