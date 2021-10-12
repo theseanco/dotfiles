@@ -41,6 +41,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'leafgarland/typescript-vim'
 " vim javascript stuff
 Plug 'pangloss/vim-javascript'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
 call plug#end()
 
 "Config Section
