@@ -41,8 +41,17 @@ Plug 'chriskempson/base16-vim'
 Plug 'leafgarland/typescript-vim'
 " vim javascript stuff
 Plug 'pangloss/vim-javascript'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
+
+
+" Added on 13th October 2021
+" Treesitter! Works really nicely
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" coloriser Works really nicely
+Plug 'norcalli/nvim-colorizer.lua'
+" shade to dim non-focussed window
+Plug 'sunjon/shade.nvim'
+
+
 call plug#end()
 
 "Config Section
@@ -161,6 +170,41 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
+
+
+" Added 13th October 2021
+" Treesitter dialog, taken straight from their readme
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+" start colorizer
+lua require'colorizer'.setup()
+
+" shade config
+lua <<EOF
+require'shade'.setup({
+  overlay_opacity = 50,
+  opacity_step = 1,
+  keys = {
+    brightness_up    = '<C-Up>',
+    brightness_down  = '<C-Down>',
+    toggle           = '<Leader>s',
+  }
+})
+EOF
+
 
 " open fzf in split
 let g:fzf_layout = { 'down': '~30%' }
