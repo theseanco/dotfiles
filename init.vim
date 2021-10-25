@@ -50,6 +50,13 @@ Plug 'alampros/vim-styled-jsx'
 " Barbar for better top bar
 " Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'romgrk/barbar.nvim'
+" Treesitter, works really nicely
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" coloriser Works really nicely
+Plug 'norcalli/nvim-colorizer.lua'
+" Neon theme for Neovim, don't like it
+" Plug 'rafamadriz/neon'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 "Config Section
@@ -59,13 +66,23 @@ if (has("termguicolors"))
  set termguicolors
 endif
 syntax enable
-let g:gruvbox_italic=1
+" NOT SURE IF THIS WORKS
+" let g:gruvbox_italic=1
+
+" New material gruvbox fun styling
+let g:gruvbox_material_enable_italic = 1
+set background=dark
+
+
+
 " Dark theme
-colorscheme gruvbox
+" colorscheme gruvbox
 " Light theme
 "colorscheme zellner
-
-" Control NERDTree
+" Neon theme for treesitter
+let g:gruvbox_material_palette = 'original'
+colorscheme gruvbox-material
+"Control NERDTree
 " Following is useful for working with nerdtree
 " https://cheatography.com/stepk/cheat-sheets/vim-nerdtree/
 let g:NERDTreeShowHidden = 1
@@ -146,6 +163,8 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " airline fonts
 let g:airline_powerline_fonts = 1
+" airline color scheme
+let g:airline_theme = 'gruvbox_material'
 
 " experimental tabstop calculation https://stackoverflow.com/questions/14173766/vim-ignores-shiftwidth-specified-in-vimrc
 set expandtab " Make sure that every file uses real tabs, not spaces
@@ -184,6 +203,42 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " Open fzf in split
 let g:fzf_layout = { 'down': '~35%' }
+
+" Treesitter dialog, taken straight from their readme
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+" start colorizer
+lua require'colorizer'.setup()
+
+" Italic support
+set t_ZH=^[[3m
+set t_ZR=^[[23m
+
+" NerdTreeFind shortcut
+command NF :NERDTreeFind
+
+" Neon colorscheme config
+"lua <<EOF
+"  vim.g.neon_style = "dark"
+"  vim.g.neon_italic_keyword = true
+"  vim.g.neon_italic_function = true
+"  vim.g.neon_italic_variable = true
+
+"  vim.cmd[[colorscheme neon]]
+"EOF
 
 " What can I do?
 " - Ctrl+a to toggle file explorer
