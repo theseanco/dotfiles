@@ -57,6 +57,8 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Neon theme for Neovim, don't like it
 " Plug 'rafamadriz/neon'
 Plug 'sainnhe/gruvbox-material'
+" Pug templates
+Plug 'digitaltoad/vim-pug'
 call plug#end()
 
 "Config Section
@@ -76,12 +78,12 @@ set background=dark
 
 
 " Dark theme
-" colorscheme gruvbox
+colorscheme gruvbox
 " Light theme
-"colorscheme zellner
+" colorscheme zellner
 " Neon theme for treesitter
-let g:gruvbox_material_palette = 'original'
-colorscheme gruvbox-material
+" let g:gruvbox_material_palette = 'original'
+" colorscheme gruvbox-material
 "Control NERDTree
 " Following is useful for working with nerdtree
 " https://cheatography.com/stepk/cheat-sheets/vim-nerdtree/
@@ -182,7 +184,7 @@ exec 'set softtabstop='.s:tabwidth
 let g:blamer_enabled = 1
 
 " show max line length for inflowmatix react code
-set colorcolumn=80
+" set colorcolumn=80
 
 " Mappings to go to type definitions/implementation/references, taken from https://pragmaticpineapple.com/ultimate-vim-typescript-setup/
 " GoTo code navigation.
